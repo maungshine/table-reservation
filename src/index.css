@@ -24,6 +24,10 @@
   --secondary-two: #FBDABB;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
   min-height: 100vh;
   font-family: var(--font);

@@ -2,6 +2,7 @@ import Header from "./Header"
 import '../styles/navbar.css';
 import { useState } from "react";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 function Navbar() {
     const [open , setOpen] = useState(false);
@@ -18,22 +19,10 @@ function Navbar() {
             />
             <ul className="nav-link-group">
                 <li>
-                    <a href="#">Home</a>
+                    <Link to={'/'}>Home</Link>
                 </li>
                 <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Menu</a>
-                </li>
-                <li>
-                    <a href="#">Reservations</a>
-                </li>
-                <li>
-                    <a href="#">Order Online</a>
-                </li>
-                <li>
-                    <a href="#">Login</a>
+                    <Link to={'/booking'}>Reservations</Link>
                 </li>
             </ul>
             <div className="menu-link-group" style={{ display: open ? '': 'none' }}>
@@ -51,19 +40,7 @@ function Navbar() {
                         <a href="#">Home</a>
                     </li>
                     <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Menu</a>
-                    </li>
-                    <li>
                         <a href="#">Reservations</a>
-                    </li>
-                    <li>
-                        <a href="#">Order Online</a>
-                    </li>
-                    <li>
-                        <a href="#">Login</a>
                     </li>
                 </ul>
             </div>

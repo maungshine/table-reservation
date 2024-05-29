@@ -10,6 +10,7 @@ nav {
 .nav-content {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   max-width: 888px;
   padding-block: 0.5rem;
@@ -17,9 +18,9 @@ nav {
 }
 
 .nav-link-group {
-  width: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .nav-link-group li {
