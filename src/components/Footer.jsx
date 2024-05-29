@@ -1,32 +1,35 @@
-
+import '../styles/footer.css'
+import footerLogo from '../assets/footer-logo.png'
 
 function Footer() {
   return (
     <footer>
-      <div>
-        <img src="" alt="" />
-      </div>
-      <div>
-        <div>
-          <h3>Doormat Navigation</h3>
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Menu</a>
-          <a href="#">Reservations</a>
-          <a href="#">Order Online</a>
-          <a href="#">Login</a>
+      <div className='footer-section'>
+        <div className='footer-logo-container'>
+          <img className='footer-logo' src={footerLogo} alt="footer logo" />
         </div>
-        <div>
-          <h3>Contact</h3>
-          <a href="#">Address</a>
-          <a href="#">Phone number</a>
-          <a href="#">Email</a>
-        </div>
-        <div>
-          <h3>Social Media Links</h3>
-          <a href="#">Address</a>
-          <a href="#">Phone number</a>
-          <a href="#">Email</a>
+        <div className='footer-nav'>
+          <div className='footer-nav-group'>
+            <h3 className='footer-nav-header'>Doormat Navigation</h3>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Menu</a>
+            <a href="#">Reservations</a>
+            <a href="#">Order Online</a>
+            <a href="#">Login</a>
+          </div>
+          <div className='footer-nav-group'>
+            <h3 className='footer-nav-header'>Contact</h3>
+            <a href="#">Address</a>
+            <a href="#">Phone number</a>
+            <a href="#">Email</a>
+          </div>
+          <div className='footer-nav-group'>
+            <h3 className='footer-nav-header'>Social Media Links</h3>
+            <a href="#">Address</a>
+            <a href="#">Phone number</a>
+            <a href="#">Email</a>
+          </div>
         </div>
       </div>
     </footer>

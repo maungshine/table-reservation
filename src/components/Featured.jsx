@@ -2,6 +2,7 @@ import Card from "./Card"
 import GreekSalad from '../assets/greek-salad.jpg'
 import Bruchetta from '../assets/bruchetta.jpg'
 import LemonCake from '../assets/lemon-dessert.jpg'
+import '../styles/featured.css'
 
 const menu = [
     {
@@ -26,14 +27,19 @@ const menu = [
 
 function Featured() {
   return (
-    <section>
-        <div>
-            <h2>This Week specials!</h2>
-            <button>Online Menu</button>
+    <section className="featured-section-container">
+        <div className="featured-section">
+            <div className="featured-heading">
+                <h2 className="featured-title">This Week specials!</h2>
+                <button className="cta">Online Menu</button>
+            </div>
+            <div className="featured-content">
+            {menu.map((item) => (
+                <Card key={item.id} imageUrl={item.imgUrl} cardTitle={item.cardTitle} cardDescription={item.cardDescription} />
+            ))}
+            </div>
+            <button className="cta cta-mobile">Online Menu</button>
         </div>
-        {menu.map((item) => (
-            <Card key={item.id} imageUrl={item.imgUrl} cardTitle={item.cardTitle} cardDescription={item.cardDescription} />
-        ))}
     </section>
   )
 }

@@ -3,6 +3,7 @@ import Sarah from '../assets/sarah.jpg'
 import Kevin from '../assets/kevin.jpg'
 import Smith from '../assets/smith.jpg'
 import Monica from '../assets/monica.jpg'
+import '../styles/testimonials.css'
 
 const menu = [
     {
@@ -37,14 +38,20 @@ const menu = [
 
 function Testimonials() {
   return (
-    <section>
-        <div>
-            <h2>This Week specials!</h2>
-            <button>Online Menu</button>
+    <section className="testimonials-section-container">
+        <div className="testimonials-section">
+            <h2 className="testimonials-title">Testimonials</h2>
+            <div className="testimonials-content">
+                <div className="track">
+                    {menu.map((item) => (
+                    <TestimonialCard key={item.id} imageUrl={item.imgUrl} name={item.name} message={item.message} rating={item.rating} />
+                    ))}
+                    {menu.map((item) => (
+                    <TestimonialCard key={item.id} imageUrl={item.imgUrl} name={item.name} message={item.message} rating={item.rating} />
+                    ))}
+                </div>
+            </div>
         </div>
-        {menu.map((item) => (
-            <TestimonialCard key={item.id} imageUrl={item.imgUrl} name={item.name} message={item.message} rating={item.rating} />
-        ))}
     </section>
   )
 }

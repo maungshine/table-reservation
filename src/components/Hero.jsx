@@ -11,7 +11,7 @@ function Hero() {
                 We are a family own Mediterrannean restaurant,
                 focused on traditional recipes served with a modern twist
             </p>
-            <button className='hero-cta'>Reserve a Table</button>
+            <button className='cta'>Reserve a Table</button>
         </div>
         <div className='hero-image-container'>
           <div className='hero-image-wrapper'>
