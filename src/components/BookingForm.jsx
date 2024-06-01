@@ -95,7 +95,7 @@ function BookingForm({ setDate, availableTimes, dispatch }) {
                     onChange={(e) => setFormData({...formData, time: e.target.value })}
                     disabled={availableTimes.length === 0}
                     >
-                >   <option selected>Choose a time</option>
+                   <option selected>Choose a time</option>
 
                         {availableTimes.map((time) => (
 
