@@ -60,6 +60,107 @@ test("Return changed availableTimes upon change of date and booking a time at a 
   expect(times).toEqual(["17:00", "19:00", "20:00", "21:00", "22:00"]);
 });
 
+test("Return changed availableTimes upon change of date and booking a time at a date", async () => {
+  render(<Booking />, { wrapper: BrowserRouter });
+
+  const dateInputElement = screen.getByTestId("date");
+  const timeSelectElement = await screen.findByTestId("time-select");
+
+  const guestInputElement = screen.getByTestId("guest");
+  const occasionSelectElement = screen.getByTestId("occasion");
+  const buttonElement = screen.getByTestId("booking-form-submit");
+
+
+  fireEvent.change(timeSelectElement, {
+    target: { value: "18:00" },
+  });
+
+  fireEvent.change(guestInputElement, {
+    target: { value: '2' },
+  });
+
+  fireEvent.change(occasionSelectElement, {
+    target: { value: "birthday" },
+  });
+
+  fireEvent.click(buttonElement);
+
+
+  
+  const dateError = await screen.findAllByText("Required");
+
+
+  expect(dateError.length).toBe(1)
+
+  fireEvent.change(dateInputElement, {
+    target: { value: "2024-06-01" },
+  });
+
+
+
+  fireEvent.change(guestInputElement, {
+    target: { value: '2' },
+  });
+
+  fireEvent.change(occasionSelectElement, {
+    target: { value: "birthday" },
+  });
+
+  fireEvent.click(buttonElement);
+
+
+  
+  const timeError = await screen.findAllByText("Required");
+
+
+  expect(timeError.length).toBe(1)
+
+  fireEvent.change(dateInputElement, {
+    target: { value: "2024-06-01" },
+  });
+
+  fireEvent.change(timeSelectElement, {
+    target: { value: "18:00" },
+  });
+
+
+
+  fireEvent.change(occasionSelectElement, {
+    target: { value: "birthday" },
+  });
+
+  fireEvent.click(buttonElement);
+
+
+  
+  const guestError = await screen.findAllByText("Required");
+
+
+  expect(guestError.length).toBe(1)
+
+  fireEvent.change(dateInputElement, {
+    target: { value: "2024-06-01" },
+  });
+
+  fireEvent.change(timeSelectElement, {
+    target: { value: "18:00" },
+  });
+
+  fireEvent.change(guestInputElement, {
+    target: { value: '2' },
+  });
+
+
+  fireEvent.click(buttonElement);
+
+
+  
+  const occasionError = await screen.findAllByText("Required");
+
+
+  expect(occasionError.length).toBe(1)
+});
+
 test("Return changed availableTimes upon first render", () => {
   render(<Booking />);
   const selectElement = screen.getByTestId("occasion");
