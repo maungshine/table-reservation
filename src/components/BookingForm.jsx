@@ -75,6 +75,7 @@ function BookingForm({ setDate, availableTimes, dispatch }) {
                     data-testid='date'
                     name='date' 
                     value={formData.date} 
+                    required
                     onChange={(e) => {
                         setDate(e.target.value);
                         setFormData({...formData, date: e.target.value});
@@ -89,10 +90,13 @@ function BookingForm({ setDate, availableTimes, dispatch }) {
                     id="res-time"
                     name='time'
                     value={formData.time}
+                    required
                     data-testid='time-select'
                     onChange={(e) => setFormData({...formData, time: e.target.value })}
                     disabled={availableTimes.length === 0}
                     >
+                >   <option selected>Choose a time</option>
+
                         {availableTimes.map((time) => (
 
                     <option  data-testid='time' value={time} key={time}>{time}</option>
@@ -111,6 +115,7 @@ function BookingForm({ setDate, availableTimes, dispatch }) {
                     id="guests"
                     data-testid='guest'
                     name='guests'
+                    required
                     value={formData.guests}
                     onChange={(e) => setFormData({ ...formData, guests: Number(e.target.value) })}
                     />
@@ -126,7 +131,8 @@ function BookingForm({ setDate, availableTimes, dispatch }) {
                 value={formData.occasion}
                 onChange={(e) => setFormData({...formData, occasion: e.target.value })}
                 data-testid='occasion'
-                >
+                required
+                >   <option selected>Choose a occasion</option>
                     <option value='birthday'>Birthday</option>
                     <option value='anniversary'>Anniversary</option>
                     <option value="engagement">Engagement</option>
