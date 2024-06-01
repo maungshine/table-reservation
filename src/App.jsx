@@ -1,19 +1,17 @@
 import Navbar from './components/Navbar'
-import Main from './components/Main'
 import Footer from './components/Footer'
 import { Outlet } from 'react-router-dom'
-
 
 function App() {
 
   return (
-    <>
+    <div className='page-wrapper'>
       <Navbar />
-      <div id='main'>
-          <Outlet />
-      </div>
+    
+        <Outlet />
+     
       <Footer />
-    </>
+    </div>
   )
 }
 

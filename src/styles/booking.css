@@ -1,0 +1,21 @@
+.booking-page{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 4rem;
+    padding-inline: 2rem;
+}
+
+.booking-title {
+    font-family: var(--main-heading);
+    font-size: var(--heading-font-size);
+    color: var(--dark);
+}
+
+.booking-section {
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    max-width: 888px;
+}

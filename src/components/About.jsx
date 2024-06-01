@@ -1,4 +1,5 @@
 import HeroImage from '../assets/restaurantfood.jpg'
+import GreekSalad from '../assets/greek-salad.jpg'
 import '../styles/about.css'
 
 function About() {
@@ -18,7 +19,7 @@ function About() {
             <img className='about-image' src={HeroImage} alt='food on a plate carried by a waiter' />
           </div>
           <div className='about-image-container about-image-overlap'>
-            <img className='about-image' src={HeroImage} alt='food on a plate carried by a waiter' />
+            <img className='about-image' src={GreekSalad} alt='food on a plate carried by a waiter' />
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import Header from "./Header"
 import '../styles/navbar.css';
 import { useState } from "react";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
     const [open , setOpen] = useState(false);
@@ -16,13 +16,20 @@ function Navbar() {
                     cursor: 'pointer',
                  }}
                  className="hamburger-icon"
+                 role="button"
             />
             <ul className="nav-link-group">
                 <li>
-                    <Link to={'/'}>Home</Link>
+                    <NavLink className={({ isActive }) => {
+                        return isActive ? "active" : "";
+                        }} to={'/'}>Home</NavLink>
                 </li>
                 <li>
-                    <Link to={'/booking'}>Reservations</Link>
+                    <NavLink 
+                    className={({ isActive }) => {
+                        return isActive ? "active" : "";
+                        }}  to={'/booking'} 
+                        >Reserve Now</NavLink>
                 </li>
             </ul>
             <div className="menu-link-group" style={{ display: open ? '': 'none' }}>
@@ -33,14 +40,19 @@ function Navbar() {
                     cursor: 'pointer',
                 }}
                 className="cross-icon"
+                role="button"
                 />
 
                 <ul >
                     <li>
-                        <a href="#">Home</a>
+                        <NavLink className={({ isActive }) => {
+                        return isActive ? "active" : "";
+                        }} to={'/'} onClick={() => setOpen(prev => !prev)} >Home</NavLink>
                     </li>
                     <li>
-                        <a href="#">Reservations</a>
+                        <NavLink className={({ isActive }) => {
+                        return isActive ? "active" : "";
+                        }} to={'/booking'} onClick={() => setOpen(prev => !prev)} >Reserve Now</NavLink>
                     </li>
                 </ul>
             </div>

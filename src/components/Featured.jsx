@@ -31,14 +31,14 @@ function Featured() {
         <div className="featured-section">
             <div className="featured-heading">
                 <h2 className="featured-title">This Week specials!</h2>
-                <button className="cta">Online Menu</button>
+                <button role="button" className="cta cta-desktop">Online Menu</button>
             </div>
             <div className="featured-content">
             {menu.map((item) => (
                 <Card key={item.id} imageUrl={item.imgUrl} cardTitle={item.cardTitle} cardDescription={item.cardDescription} />
             ))}
             </div>
-            <button className="cta cta-mobile">Online Menu</button>
+            <button role="button" className="cta cta-mobile">Online Menu</button>
         </div>
     </section>
   )

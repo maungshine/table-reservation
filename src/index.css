@@ -54,3 +54,19 @@ section {
   font-weight: var(--lead-text-font-weight);
   cursor: pointer;
 }
+
+main {
+  flex-grow: 1;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.active {
+  color: black;
+  border-bottom: 2px solid black;
+}

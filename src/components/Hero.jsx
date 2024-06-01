@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import HeroImage from '../assets/restaurantfood.jpg'
 import '../styles/hero.css'
 function Hero() {
@@ -11,7 +12,7 @@ function Hero() {
                 We are a family own Mediterrannean restaurant,
                 focused on traditional recipes served with a modern twist
             </p>
-            <button className='cta'>Reserve a Table</button>
+            <Link to={'/booking'} className='cta'>Reserve a Table</Link>
         </div>
         <div className='hero-image-container'>
           <div className='hero-image-wrapper'>

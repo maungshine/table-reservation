@@ -2,34 +2,24 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ErrorPage from "./error-page";
 import Main from './components/Main.jsx';
 import Booking from './components/Booking.jsx';
+import BookingConfirmation from './components/BookingConfirmation.jsx';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: '/',
-        element: <Main />
-      },
-      {
-        path: '/booking',
-        element: <Booking />
-      }
-    ]
-  },
-]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<Main />} />
+          <Route path="booking" element={<Booking />} />
+          <Route path="booking-confirmation" element={<BookingConfirmation />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
 )
